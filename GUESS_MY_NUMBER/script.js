@@ -94,4 +94,14 @@ console.log(Number(stored));
   const myhighscore = Number(document.querySelector('.highscore').textContent = highscores);
  
  
+// RESETHIGHSCORE
+const resethigh = document.querySelector('.RESETHIGH')
+console.log(resethigh);
+console.log(myhighscore);
+resethigh.addEventListener('click', function(){
+highscores = 0;
+  console.log( Number(document.querySelector('.highscore').textContent = highscores));
 
+ 
+             
+})
