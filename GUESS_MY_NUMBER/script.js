@@ -3,6 +3,9 @@
 let score = 20;
 const secretNumber = Math.trunc(Math.random() * 40) + 1;
 let highscores = 0;
+
+// Localstorage
+
 // check button
 document.querySelector('.check').addEventListener('click', function () {
   const guess = Number(document.querySelector('.guess').value);
@@ -11,6 +14,7 @@ document.querySelector('.check').addEventListener('click', function () {
   if (!guess) {
     document.querySelector('.message').textContent = '⛔️ NO NUMBER!';
   }
+
   //   correct no
   else if (guess === secretNumber) {
     document.querySelector('.message').textContent = 'CORRECT NUMBER!';
@@ -20,9 +24,32 @@ document.querySelector('.check').addEventListener('click', function () {
 
     if (score > highscores) {
       highscores = score;
-      document.querySelector('.highscore').textContent = highscores;
+      const myhighscore = (document.querySelector('.highscore').textContent =
+        highscores);
+      console.log(myhighscore);
+      console.log(highscores);
+      const stringss = String(highscores);
+      console.log(stringss);
+      // saving to localstorage
+      localStorage.setItem('highscoress', stringss);
+      // if (highscoress > highscores) {
+
+      //  retrieving no
+      // const stored = localStorage.getItem('highscoress');
+      // console.log(stored);
+      // const NOSTORED = Number(stored);
+      // console.log(Number(stored));
+      // console.log(highscores);
+
+      // if (NOSTORED) {
+      //   console.log((myhighscore = NOSTORED));
+      // }
+
+      // }
     }
+   
   }
+
   //   when game is too low
   else if (guess < secretNumber) {
     if (score > 1) {
@@ -57,3 +84,14 @@ document.querySelector('.again').addEventListener('click', function () {
   document.querySelector('body').style.backgroundColor = '#222';
   document.querySelector('.number').style.width = '15rem';
 });
+
+const stored = localStorage.getItem('highscoress');
+console.log(stored);
+const NOSTORED = Number(stored);
+console.log(Number(stored));
+
+  console.log((highscores = NOSTORED));
+  const myhighscore = Number(document.querySelector('.highscore').textContent = highscores);
+ 
+ 
+
