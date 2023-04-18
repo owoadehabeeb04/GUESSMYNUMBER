@@ -100,8 +100,9 @@ console.log(resethigh);
 console.log(myhighscore);
 resethigh.addEventListener('click', function(){
 highscores = 0;
-  console.log( Number(document.querySelector('.highscore').textContent = highscores));
-
- 
+console.log( Number(document.querySelector('.highscore').textContent = highscores));
+const stringss = String(highscores);
+      console.log(stringss);
+localStorage.setItem('highscoress', stringss);
              
 })
